@@ -1,0 +1,9 @@
+.settings
+*~
+*.diff
+*.patch
+test/qunit
+/*.html
+.DS_Store
+node_modules
+bower_components

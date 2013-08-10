@@ -1,0 +1,9 @@
+{
+  "name": "hexmines",
+  "version": "0.1.0",
+  "dependencies": {
+    "hexlib": "~0.1.0",
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.0-rc1"
+  }
+}

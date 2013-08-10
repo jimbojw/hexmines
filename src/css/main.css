@@ -1,0 +1,28 @@
+/**
+ * main.css - styles for game main entry page.
+ */
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.header {
+  height: 180px;
+  overflow: hidden;
+  position: absolute;
+  top: 50px;
+  width: 100%;
+}
+
+.mines-wrapper {
+  bottom: 0;
+  padding: 20px;
+  position: absolute;
+  top: 220px;
+  width: 100%;
+}
+.mines-outer {
+  background: #ccc;
+  height: 100%;
+  width: 100%;
+}
