@@ -9,6 +9,7 @@ html, body {
 }
 
 .header {
+  display: none;
   height: 180px;
   overflow: hidden;
   position: absolute;
@@ -19,9 +20,8 @@ html, body {
 /* mines game scaffolding */
 .mines-wrapper {
   bottom: 0;
-  padding: 20px;
   position: absolute;
-  top: 220px;
+  top: 50px;
   width: 100%;
 }
 .mines-outer {
@@ -36,88 +36,52 @@ html, body {
 
 /* hex game tiles */
 .tile {
-  background-image: url("../image/sprite.svg");
+  background-image: url("../image/sprite.png");
   background-position: -48px 0;
   height: 42px;
   position: absolute;
   width: 48px;
 }
-.cursor {
+
+/* first row */
+.tile.cursor {
   background-position: 0 0;
 }
-.g1 {
+.tile.unexplored {
+  background-position: -48px 0;
+}
+.tile.mine {
   background-position: -96px 0;
 }
-.g2 {
-  background-position: 0 -42px;
-}
-.g3 {
-  background-position: -48px -42px;
-}
-.g4,
-.g5 {
-  background-position: -96px -42px;
-}
-.g32 {
-  background-position: 0 -84px;
-}
-.g64 {
-  background-position: -48px -84px;
-}
-.g128 {
-  background-position: -96px -84px;
-}
-.n1 {
+.tile.hit {
   background-position: -144px 0;
 }
-.n2 {
-  background-position: -192px 0;
+
+/* second row */
+.tile.n0 {
+  background-position: 0 -42px;
 }
-.n3 {
-  background-position: -240px 0;
+.tile.n1 {
+  background-position: -48px -42px;
 }
-.n4 {
-  background-position: -288px 0;
+.tile.n2 {
+  background-position: -96px -42px;
 }
-.n5 {
-  background-position: -336px 0;
-}
-.n6 {
-  background-position: -384px 0;
-}
-.n7 {
+.tile.n3 {
   background-position: -144px -42px;
 }
-.n8 {
-  background-position: -192px -42px;
+
+/* third row */
+.tile.n4 {
+  background-position: 0 -84px;
 }
-.n9 {
-  background-position: -240px -42px;
+.tile.n5 {
+  background-position: -48px -84px;
 }
-.n10 {
-  background-position: -288px -42px;
+.tile.n6 {
+  background-position: -96px -84px;
 }
-.n11 {
-  background-position: -336px -42px;
-}
-.n12 {
-  background-position: -384px -42px;
-}
-.n13 {
+.tile.safe {
   background-position: -144px -84px;
 }
-.n14 {
-  background-position: -192px -84px;
-}
-.n15 {
-  background-position: -240px -84px;
-}
-.n16 {
-  background-position: -288px -84px;
-}
-.n17 {
-  background-position: -336px -84px;
-}
-.n18 {
-  background-position: -384px -84px;
-}
+
