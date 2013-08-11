@@ -144,6 +144,13 @@ var
             }).apply(null, queue.shift());
           }
           
+          // check to see if this is the end game
+          var $unexplored = $(grid.root).find('.unexplored');
+          console.log($unexplored.length);
+          if ($unexplored.length === Object.keys(mines).length) {
+            $unexplored.attr('class', 'tile safe');
+          }
+          
         },
         
         /**
