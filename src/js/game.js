@@ -115,6 +115,8 @@ var
           
           mines = game.mines = {};
           
+          game.tiles = {};
+          
           visitArea(game.area, function(x, y) {
             var
               $tile = $('<div class="tile unexplored"></div>'),
@@ -124,11 +126,11 @@ var
               top: inv.y
             });
             $tile.appendTo(grid.root);
-            tiles[hex.key(x, y)] = $tile;
+            game.tiles[hex.key(x, y)] = $tile;
             tileCount += 1;
           });
           
-          game.$cursor.appendTo(grid.root);
+          game.$cursor.detach().appendTo(grid.root);
           
           // add mines until desired difficulty has been achieved
           while (mineCount / tileCount < difficulty) {
@@ -145,14 +147,11 @@ var
           
           var key;
           
-          // clear out existing mines
-          mines = game.mines = {};
-          
           // remove tiles
-          for (key in tiles) {
-            tiles[key].remove();
+          for (key in game.tiles) {
+            game.tiles[key].remove();
           }
-          tile = game.tiles = {};
+          game.tiles = {};
           
           // reinitialize
           game.init();
@@ -214,9 +213,9 @@ var
             } else {
               // sorry, a loser is you :(
               Object.keys(game.mines).forEach(function(k){
-                tiles[k].attr('class', 'tile mine');
+                game.tiles[k].attr('class', 'tile mine');
               });
-              tiles[key].attr('class', 'tile hit');
+              game.tiles[key].attr('class', 'tile hit');
               return;
             }
           }
@@ -228,7 +227,7 @@ var
               if (!(key in visited)) {
                 visited[key] = 1;
                 game.reveal(x, y);
-                if (tiles[key].hasClass('n0')) {
+                if (game.tiles[key].hasClass('n0')) {
                   visitNeighbors(x, y, function(x, y){
                     if (region.inside(x, y)) {
                       queue.push([x, y]);
@@ -257,14 +256,14 @@ var
           }
           
           if (key in game.mines) {
-            return tiles[key].attr('class', 'tile mine');
+            return game.tiles[key].attr('class', 'tile mine');
           }
           
           count = 0;
           visitNeighbors(x, y, function(x, y) {
             count += +(hex.key(x, y) in game.mines);
           });
-          tiles[key].attr('class', 'tile n' + count);
+          game.tiles[key].attr('class', 'tile n' + count);
           
         },
         
@@ -283,9 +282,6 @@ var
       // cursor to indicate mouse/touch location
       $cursor = game.$cursor =
         $('<div class="tile cursor" style="display:none"></div>'),
-      
-      // collection of jQuery result objects, one for each tile
-      tiles = game.tiles = {},
       
       // region to match area
       region = game.region = hex.region(grid, {
