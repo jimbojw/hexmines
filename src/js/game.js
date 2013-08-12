@@ -20,8 +20,8 @@ var
     difficultyValues: {
       easy: 0.05,
       medium: 0.15,
-      hard: 0.25,
-      terrifying: 0.5
+      hard: 0.20,
+      terrifying: 0.30
     }
     
   },
