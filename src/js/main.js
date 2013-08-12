@@ -29,6 +29,12 @@ var
   // instance of hexmines game
   game;
 
+$('.navbar-brand').click(function(event) {
+  event.preventDefault();
+  game.reset();
+});
+
+// check appropriate size box
 $('input[name="size"]')
   .change(function(event) {
     game.size = $(this).val();
@@ -38,7 +44,7 @@ $('input[name="size"]')
   .filter('[value="' + size + '"]')
     .prop('checked', true);
 
-// check appropriate size/difficulty boxes
+// check appropriate difficulty box
 $('input[name="difficulty"]')
   .change(function(event) {
     game.difficulty = $(this).val();
@@ -48,13 +54,11 @@ $('input[name="difficulty"]')
   .filter('[value="' + difficulty + '"]')
     .prop('checked', true);
 
+// create game
 game = hexmines.createGame({
   grid: hex.grid($('.minefield')[0]),
   size: size,
   difficulty: difficulty
 });
-
-// reorient so the root is centered in the grid element
-game.center();
 
 })(window, hexmines, hex, jQuery);
