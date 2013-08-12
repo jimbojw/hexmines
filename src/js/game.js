@@ -214,7 +214,9 @@ var
               delete game.mines[key];
             } else {
               // sorry, a loser is you :(
-              visitArea(game.area, game.reveal);
+              Object.keys(game.mines).forEach(function(k){
+                tiles[k].attr('class', 'tile mine');
+              });
               tiles[key].attr('class', 'tile hit');
               return;
             }
@@ -239,7 +241,6 @@ var
           }
           
           game.checkWin();
-          
           
         },
         
