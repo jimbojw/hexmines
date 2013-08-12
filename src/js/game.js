@@ -132,7 +132,6 @@ var
           
           // add mines until desired difficulty has been achieved
           while (mineCount / tileCount < difficulty) {
-            console.log(mineCount / tileCount, difficulty);
             game.addMine();
             mineCount += 1;
           }
