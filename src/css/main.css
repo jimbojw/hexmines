@@ -8,29 +8,22 @@ html, body {
   width: 100%;
 }
 
-.header {
-  display: none;
-  height: 180px;
-  overflow: hidden;
-  position: absolute;
-  top: 50px;
-  width: 100%;
+/* nav bar & settings */
+.navbar-nav .dropdown-menu a {
+  padding: 0;
+}
+.navbar-nav label {
+  display: block;
+  font-weight: normal;
+  padding: 10px 20px;
 }
 
 /* mines game scaffolding */
-.mines-wrapper {
+.minefield {
+  background: #ccc;
   bottom: 0;
   position: absolute;
   top: 50px;
-  width: 100%;
-}
-.mines-outer {
-  background: #ccc;
-  height: 100%;
-  width: 100%;
-}
-.mines-inner {
-  height: 100%;
   width: 100%;
 }
 

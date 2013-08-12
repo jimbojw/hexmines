@@ -18,28 +18,89 @@
     <a class="navbar-brand" href="#">hexmines</a>
     <div class="nav-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li class="dropdown">
+          <a id="size" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+            Size <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="size">
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="size" value="small" />
+                  <span>Small</span>
+                </label>
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="size" value="medium" />
+                  <span>Medium</span>
+                </label>
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="size" value="large" />
+                  <span>Large</span>
+                </label>
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="size" value="enormous" />
+                  <span>Enormous</span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li><!--/.dropdown-->
+        <li class="dropdown">
+          <a id="difficulty" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+            Difficulty <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="difficulty">
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="difficulty" value="easy" />
+                  <span>Easy</span>
+                </label>
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="difficulty" value="medium" />
+                  <span>Medium</span>
+                </label>
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="difficulty" value="hard" />
+                  <span>Hard</span>
+                </label>
+              </a>
+            </li>
+            <li role="presentation">
+              <a role="menuitem" tabindex="-1">
+                <label>
+                  <input type="radio" name="difficulty" value="terrifying" />
+                  <span>Terrifying</span>
+                </label>
+              </a>
+            </li>
+          </ul>
+        </li><!--/.dropdown-->
       </ul>
     </div><!--/.nav-collapse -->
   </div>
 </div>
-<div class="header">
-  <div class="container">
-    <h1>hexmines!</h1>
-    <p class="lead">
-      To play hexmines, click or tap any where.
-      If you find a mine, the game's over!
-      Otherwise, the number shown will tell you how many neighboring tiles are mines.
-      Good luck!
-    </p>
-  </div>
-</div>
-<div class="mines-wrapper">
-  <div class="mines-outer">
-    <div class="mines-inner"></div>
-  </div>
-</div>
+<div class="minefield"></div>
 <script src="../bower_components/hexlib/dist/hex.min.js"></script>
 <script src="../bower_components/jquery/jquery.min.js"></script>
 <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
