@@ -3,6 +3,8 @@
 
 A hexagon based mine finding game built on [hexlib](https://github.com/jimbojw/hexlib).
 
+An example is running at [hexlib.com/hexlib/mines](http://hexlib.com/hexlib/mines/).
+
 ### Install Dependencies
 
 hexmines requires dependencies installed through [bower](http://bower.io/):
