@@ -9,10 +9,10 @@ html, body {
 }
 
 /* nav bar & settings */
-.navbar-nav .dropdown-menu a {
+.navbar-nav .settings a {
   padding: 0;
 }
-.navbar-nav label {
+.navbar-nav .settings label {
   display: block;
   font-weight: normal;
   padding: 10px 20px;
