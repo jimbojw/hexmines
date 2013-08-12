@@ -36,20 +36,26 @@ $('.navbar-brand').click(function(event) {
 
 // check appropriate size box
 $('input[name="size"]')
-  .change(function(event) {
-    game.size = $(this).val();
-    set('size', game.size);
-    game.reset();
+  .on('change blur', function(event) {
+    var size = $(this).val();
+    if (game.size !== size) {
+      game.size = size;
+      set('size', game.size);
+      game.reset();
+    }
   })
   .filter('[value="' + size + '"]')
     .prop('checked', true);
 
 // check appropriate difficulty box
 $('input[name="difficulty"]')
-  .change(function(event) {
-    game.difficulty = $(this).val();
-    set('difficulty', game.difficulty);
-    game.reset();
+  .on('change blur', function(event) {
+    var difficulty = $(this).val();
+    if (game.difficulty !== difficulty) {
+      game.difficulty = difficulty;
+      set('difficulty', game.difficulty);
+      game.reset();
+    }
   })
   .filter('[value="' + difficulty + '"]')
     .prop('checked', true);
